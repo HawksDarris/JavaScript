@@ -114,4 +114,41 @@ function sortSpeciesByTeeth(arr, prop) {
 	return arr.sort((a, b) => a[prop]- b[prop]);
 }
 
-console.log(sortSpeciesByTeeth(speciesArray, 'numTeeth'))
+// findMyKeys
+const findMyKeys = arr => arr.includes('keys') ? arr.indexOf('keys') : -1;
+
+// dogFactory
+const dogFactory = (name, breed, weight) => {
+	return {
+		_name: name,
+		_breed: breed,
+		_weight: weight,
+	
+		//get and set name
+		get name() {
+			return this._name;
+		},
+		set name(val) {
+			this._name = val;				
+		},
+		get breed() {
+			return this._breed;
+		},
+		set breed(val) {
+			this._breed = val;
+		},
+		get weight() {
+			return this._weight
+		},
+		set weight(val) {
+			this._weight = val;
+		},
+		bark(){
+			return `ruff! ruff!`;
+		},
+		eatTooManyTreats(){
+			this._weight ++;
+			return null;
+		}
+	}
+}
